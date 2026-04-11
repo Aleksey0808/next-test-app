@@ -1,0 +1,200 @@
+.page {
+  display: grid;
+  gap: 28px;
+  animation: pageEnter 0.3s ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.title {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.titleCount {
+  font-size: 1.5rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 22px;
+}
+
+.list {
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  padding: 22px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16, 140, 11, 0.2);
+}
+
+.cardActive {
+  border-color: rgba(16, 140, 11, 0.35);
+  box-shadow: 0 18px 44px rgba(16, 140, 11, 0.1);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.cardBody {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.cardLabel,
+.cardCount {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.cardTitle {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  color: #0f172a;
+}
+
+.cardText {
+  margin-bottom: 12px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.cardMetaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.metaBlock {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(247, 250, 252, 0.92);
+}
+
+.metaBlock strong {
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.metaBlock span {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.metaLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8 !important;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1320px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+    gap: 18px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .cardTop {
+    margin-bottom: 12px;
+  }
+
+  .cardBody {
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .cardLabel,
+  .cardCount {
+    font-size: 0.74rem;
+  }
+
+  .cardTitle {
+    font-size: 1.05rem;
+  }
+
+  .cardText,
+  .metaBlock span {
+    font-size: 0.84rem;
+  }
+
+  .metaBlock {
+    padding: 12px;
+  }
+
+  .metaBlock strong {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .cardBody {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cardMetaGrid {
+    grid-template-columns: 1fr;
+  }
+}

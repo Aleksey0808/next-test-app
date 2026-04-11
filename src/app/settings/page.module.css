@@ -1,0 +1,285 @@
+.page {
+  display: grid;
+  gap: 24px;
+  animation: pageEnter 0.3s ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.title {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.profileCard,
+.formCard {
+  border-radius: 28px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+}
+
+.profileCard {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+.avatarWrap {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  border-radius: 24px;
+  object-fit: cover;
+  background: #f8fafc;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.avatarButton {
+  min-height: 42px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 999px;
+  background: #16a34a;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.profileMeta {
+  display: grid;
+  gap: 6px;
+  text-align: center;
+}
+
+.profileLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.profileName {
+  font-size: 1.25rem;
+  color: #0f172a;
+}
+
+.profileRole {
+  font-size: 0.96rem;
+  color: #475569;
+}
+
+.profileInfoList {
+  display: grid;
+  gap: 12px;
+}
+
+.profileInfoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #f8fafc;
+}
+
+.profileInfoItem span {
+  color: #64748b;
+  font-size: 0.92rem;
+}
+
+.profileInfoItem strong {
+  color: #0f172a;
+  font-size: 0.94rem;
+}
+
+.formCard {
+  display: grid;
+  gap: 24px;
+  padding: 28px;
+}
+
+.formHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.formLabel {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.formTitle {
+  margin: 0;
+  font-size: 1.45rem;
+  color: #0f172a;
+}
+
+.formHint {
+  color: #64748b;
+  font-size: 0.92rem;
+}
+
+.fieldsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.input {
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 16px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 0.98rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input:focus {
+  border-color: rgba(22, 163, 74, 0.7);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+.inputError {
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.12);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.submitButton {
+  min-width: 210px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.96rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.errorText {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #dc2626;
+}
+
+.successText {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #15803d;
+}
+
+@media (max-width: 1120px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profileCard {
+    justify-items: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero,
+  .formHeader,
+  .footer {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .fieldsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formCard,
+  .profileCard,
+  .hero {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}

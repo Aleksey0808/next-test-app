@@ -1,0 +1,136 @@
+.page {
+  display: grid;
+  gap: 28px;
+  animation: pageEnter 0.3s ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  display: grid;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.title {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.chartCard {
+  display: grid;
+  gap: 22px;
+  padding: 24px;
+  border-radius: 28px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background:
+    radial-gradient(circle at top left, rgba(34, 197, 94, 0.14), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.96));
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.chartHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.chartTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.chartText {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.metrics {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.metric {
+  min-width: 120px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.metricLabel {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.metricValue {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.4rem;
+  color: #0f172a;
+}
+
+.chartWrap {
+  width: 100%;
+  height: 360px;
+}
+
+.tooltip {
+  display: grid;
+  gap: 6px;
+  min-width: 110px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+  color: #0f172a;
+}
+
+.tooltip span {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.emptyState {
+  display: grid;
+  place-items: center;
+  min-height: 120px;
+  border-radius: 24px;
+  border: 1px dashed rgba(148, 163, 184, 0.35);
+  color: #64748b;
+  background: rgba(248, 250, 252, 0.7);
+}
+
+@media (max-width: 860px) {
+  .chartHeader {
+    display: grid;
+  }
+
+  .chartCard {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .chartWrap {
+    height: 300px;
+  }
+}

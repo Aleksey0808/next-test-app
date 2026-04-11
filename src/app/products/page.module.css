@@ -1,0 +1,359 @@
+.page {
+  display: grid;
+  gap: 24px;
+  animation: pageEnter 0.3s ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.titleCount {
+  font-size: 1.5rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.toolbarTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterField {
+  position: relative;
+}
+
+.filterWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterLabel {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.selectButton {
+  min-width: 220px;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 14px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.selectArrow {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.selectMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 20;
+  min-width: 220px;
+  padding: 8px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+  animation: dropdownEnter 0.2s ease;
+}
+
+@keyframes dropdownEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.selectOption {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #334155;
+  text-align: left;
+  cursor: pointer;
+}
+
+.selectOption:hover {
+  background: #f8fafc;
+}
+
+.selectOptionActive {
+  background: #e4efff;
+  color: #1d4ed8;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.card {
+  display: grid;
+  grid-template-columns:
+    20px
+    64px
+    minmax(170px, 1.8fr)
+    minmax(90px, 0.9fr)
+    minmax(120px, 1.1fr)
+    minmax(90px, 0.9fr)
+    minmax(95px, 0.9fr)
+    minmax(120px, 1fr)
+    36px;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.cardMark {
+  display: flex;
+  justify-content: center;
+}
+
+.markFree,
+.markRepair {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.markFree {
+  background: #16a34a;
+}
+
+.markRepair {
+  background: #111827;
+}
+
+.cardImageWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardImage {
+  border-radius: 16px;
+  object-fit: contain;
+  background: #f8fafc;
+  padding: 6px;
+}
+
+.cardMain {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.cardTitleRow {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.cardTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: normal;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.cardModel {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  white-space: normal;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.cardSerial {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.cardStatus,
+.cardGuarantee,
+.cardCondition,
+.cardGroup {
+  display: grid;
+  gap: 6px;
+}
+
+.cardLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.statusValue {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.statusFree {
+  color: #16a34a;
+}
+
+.statusRepair {
+  color: #111827;
+}
+
+.cardGuaranteeValue,
+.cardConditionValue,
+.cardGroupValue {
+  font-size: 0.82rem;
+  color: #0f172a;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.cardPrice {
+  display: grid;
+  gap: 4px;
+}
+
+.cardPriceUsd {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.cardPriceUah {
+  font-size: 0.92rem;
+  color: #0f172a;
+}
+
+.deleteButton {
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1180px) {
+  .card {
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .cardMark,
+  .cardImageWrap {
+    justify-content: flex-start;
+  }
+
+  .cardMain,
+  .cardStatus,
+  .cardGuarantee,
+  .cardCondition,
+  .cardPrice,
+  .cardGroup,
+  .deleteButton {
+    width: 100%;
+  }
+
+  .cardStatus,
+  .cardGuarantee,
+  .cardCondition,
+  .cardGroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .cardPrice {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 860px) {
+  .cardMain {
+    display: grid;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .cardTitleRow {
+    display: grid;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .cardImageWrap {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbarTitle {
+    justify-content: space-between;
+  }
+
+  .filterWrapper {
+    justify-content: space-between;
+  }
+
+  .selectButton,
+  .selectMenu {
+    min-width: 100%;
+  }
+
+  .selectMenu {
+    left: 0;
+    right: auto;
+  }
+}

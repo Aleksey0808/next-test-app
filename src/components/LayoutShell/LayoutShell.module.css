@@ -1,0 +1,21 @@
+.shell {
+  min-height: 100vh;
+}
+
+.main {
+  width: min(100%, 1152px);
+  margin: 0 auto;
+  padding: 40px 16px 48px 230px;
+}
+
+@media (min-width: 640px) {
+  .main {
+    padding-top: 48px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .main {
+    padding-left: 16px;
+  }
+}

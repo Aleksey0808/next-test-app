@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS inventory_app;
+USE inventory_app;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(120) NOT NULL UNIQUE,
+  phone VARCHAR(30) NOT NULL,
+  position VARCHAR(100) NOT NULL,
+  avatar VARCHAR(255),
+  password_hash VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(150) NOT NULL,
+  description TEXT,
+  order_date DATETIME NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  serial_number INT NOT NULL UNIQUE,
+  is_new TINYINT(1) NOT NULL,
+  photo VARCHAR(255),
+  title VARCHAR(150) NOT NULL,
+  type VARCHAR(100) NOT NULL,
+  specification VARCHAR(255),
+  guarantee_start DATETIME NOT NULL,
+  guarantee_end DATETIME NOT NULL,
+  price_usd DECIMAL(10,2) NOT NULL,
+  price_uah DECIMAL(10,2) NOT NULL,
+  order_id INT NOT NULL,
+  product_date DATETIME NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_products_order
+    FOREIGN KEY (order_id) REFERENCES orders(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);

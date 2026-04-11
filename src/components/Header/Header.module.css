@@ -1,0 +1,145 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 240px;
+  right: 0;
+  z-index: 35;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255);
+  backdrop-filter: blur(18px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.inner {
+  width: 100%;
+  min-height: 82px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: auto minmax(280px, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0f172a;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.brandTitle {
+  font-size: 18px;
+  color: #108c0b;
+  white-space: nowrap;
+}
+
+.burgerButton {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.08);
+  cursor: pointer;
+}
+
+.burgerLine {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 4px auto;
+  background: #0f172a;
+  border-radius: 999px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1180px) {
+  .header {
+    left: 0;
+    right: 0;
+  }
+
+  .inner {
+    grid-template-columns: auto 1fr auto;
+    padding: 0 16px;
+  }
+
+  .burgerButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    min-height: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .center,
+  .right {
+    width: 100%;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 460px;
+}
+
+.input {
+  width: 100%;
+  height: 46px;
+  padding: 0 18px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  color: #0f172a;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+  color: #64748b;
+}
+
+.input:focus {
+  border-color: rgba(16, 140, 11, 0.45);
+  box-shadow: 0 0 0 4px rgba(16, 140, 11, 0.08);
+}
