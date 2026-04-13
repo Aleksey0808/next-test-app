@@ -37,7 +37,8 @@ const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
     const formData = new FormData();
     formData.append("avatar", file);
 
-    const response = await fetch("http://localhost:4000/api/upload/avatar", {
+const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/upload/avatar`, {
+
       method: "POST",
       body: formData,
     });

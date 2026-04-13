@@ -8,12 +8,15 @@ import { fileURLToPath } from "url";
 import multer from "multer";
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = "test-secret-key";
+const PORT = process.env.PORT || 4000;
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:3000";
+const SERVER_PUBLIC_URL = process.env.SERVER_PUBLIC_URL || `http://localhost:${PORT}`;
+const JWT_SECRET = process.env.JWT_SECRET || "test-secret-key";
+
 
 const app = express();
 const server = http.createServer(app);
-const PORT = process.env.PORT || 4000;
-const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:3000";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -102,7 +105,7 @@ app.post("/api/upload/avatar", upload.single("avatar"), (req, res) => {
     return res.status(400).json({ message: "File not uploaded" });
   }
 
-  const imageUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
+const imageUrl = `${SERVER_PUBLIC_URL}/uploads/${req.file.filename}`;
 
   return res.json({
     message: "Avatar uploaded successfully",

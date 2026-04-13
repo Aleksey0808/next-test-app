@@ -156,7 +156,8 @@ const SettingsPage = () => {
     formData.append("avatar", file);
 
     try {
-      const response = await fetch("http://localhost:4000/api/upload/avatar", {
+const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/upload/avatar`, {
+
         method: "POST",
         body: formData,
       });

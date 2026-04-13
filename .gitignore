@@ -24,6 +24,8 @@ coverage
 .env.development.local
 .env.test.local
 .env.production.local
+.env.production
+.env.development
 
 # system
 .DS_Store
@@ -34,10 +36,8 @@ Thumbs.db
 .idea
 
 # uploads
-public/uploads
+uploads
 
-# docker
-.dockerignore
 
 # local misc
 *.log
