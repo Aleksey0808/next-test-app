@@ -7,6 +7,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import multer from "multer";
 import jwt from "jsonwebtoken";
+import fs from "node:fs";
+
 
 const PORT = process.env.PORT || 4000;
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:3000";
@@ -20,15 +22,22 @@ const server = http.createServer(app);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const uploadsDir = path.join(__dirname, "../uploads");
+
+fs.mkdirSync(uploadsDir, { recursive: true });
+
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../uploads"));
+    cb(null, uploadsDir);
   },
+
   filename: (req, file, cb) => {
     const uniqueName = `${Date.now()}-${file.originalname}`;
     cb(null, uniqueName);
   },
 });
+
 const upload = multer({
   storage,
 });
@@ -98,7 +107,8 @@ app.get("/api/health", (req, res) => {
   res.json({ ok: true, activeSessions });
 });
 
-app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
+app.use("/uploads", express.static(uploadsDir));
+
 
 app.post("/api/upload/avatar", upload.single("avatar"), (req, res) => {
   if (!req.file) {
