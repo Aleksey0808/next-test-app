@@ -5,7 +5,7 @@ import Link from "next/link";
 import TopMenu from "@/components/TopMenu";
 import styles from "./Header.module.css";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { selectSearchQuery, setSearchQuery, selectLanguage, setLanguage } from "@/store/slices/appSlice";
+import { selectSearchQuery, setSearchQuery, selectLanguage } from "@/store/slices/appSlice";
 import { getDictionary } from "@/helpers";
 
 const Header = ({ isSidebarOpen, onMenuClick }: { isSidebarOpen: boolean; onMenuClick: () => void }) => {

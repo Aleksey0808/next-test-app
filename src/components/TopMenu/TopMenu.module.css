@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 18px;
+  flex-wrap: wrap;
 }
 
 .dateTime {
@@ -35,7 +36,7 @@
 .sessionsLabel {
   font-size: 0.8rem;
   color: #64748b;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .sessionsCount {
@@ -85,6 +86,6 @@
 
   .dateTime {
     align-items: flex-start;
-    width: 200px;
+    /* width: 200px; */
   }
 }
